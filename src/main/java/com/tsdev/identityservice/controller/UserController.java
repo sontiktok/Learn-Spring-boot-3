@@ -1,5 +1,6 @@
 package com.tsdev.identityservice.controller;
 
+import com.tsdev.identityservice.dto.request.ApiRespone;
 import com.tsdev.identityservice.dto.request.UserCreationRequest;
 import com.tsdev.identityservice.dto.request.UserUpdateRequest;
 import com.tsdev.identityservice.entity.User;
@@ -18,9 +19,10 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-
-    User createUser(@RequestBody @Valid UserCreationRequest request) {
-        return userService.createUser(request);
+    ApiRespone<User> createUser(@RequestBody @Valid UserCreationRequest request) {
+        ApiRespone<User> apiRespone = new ApiRespone<>();
+        apiRespone.setResult(userService.createUser(request));
+        return apiRespone;
     }
 
     @GetMapping

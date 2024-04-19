@@ -4,6 +4,7 @@ public enum ErrorCode {
     INVALID_KEY(1001,"InValid Key"),
     UNCATEGORIZED_EXCEPTION(9999, "Uncategorized Exception"),
     USER_EXISTED(1002, "User already existed"),
+    USER_NOT_EXIST(1005, "User not exist"),
     USERNAME_INVALID(1003, "Username must be at least 3 characters"),
     INVALID_PASSWORD(1004, "Password must be at least 8 characters"),
     ;
